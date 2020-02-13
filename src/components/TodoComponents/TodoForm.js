@@ -1,38 +1,50 @@
-import React from "react";
+import React, { Component } from 'react';
 
-class TodoForm extends React.Component {
-  // Constructor with state
-  constructor() {
-    super();
-    this.state = {
-      item1: ""
-    };
-  }
+class TodoForm extends Component {
 
-  handleChanges = e => {
-    // update state with each keystroke
-    // console.log(e);
-    this.setState({ [e.target.name]: e.target.value });
-    // console.log(this.state);
-  };
+    constructor() {
+        super();
+        this.state = {
+          item: ''
+        };
+      }
 
-  // class property to submit form
-  submitItem = e => {
+      handleChanges = e => {
+          //update state wtih each keystroke
+        // this.setState({ [e.target.name]: e.target.value })
+          this.setState({ item: e.target.value })
+      }
+
+      //class property to submit form
+    submitItem = e => {
     e.preventDefault();
-    this.props.addItem(e, this.state.item);
-    // this.setState({ item: "" });
-  };
-
-  render() {
-    console.log("rendering form", this.state.item);
-    return (
-      <form onSubmit={this.submitItem}>
-        {/* This is an uncontrolled component 😬 We want it to be controlled by state */}
-        <input type="text" name="item" onChange={this.handleChanges} />
-        <button>Add</button>
-      </form>
-    );
+    this.props.addTodo(e, this.state.item);
+    this.setState({ item: '' })
   }
+
+  clearSelected = e => {
+    e.preventDefault();
+    console.log('Clear selected');
+    this.props.filterCompleted();
+  }
+
+      render(){
+    return (
+        <div>
+           <form onSubmit={this.submitItem}>
+                <label htmlFor="item">New Task: </label>
+                <input 
+                type="text" 
+                name="item" 
+               
+                value={this.state.item}
+                onChange={this.handleChanges}/>
+                <button> Add </button>
+               
+           </form>
+        </div>
+    )
+}
 }
 
 export default TodoForm;
