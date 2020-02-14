@@ -32,7 +32,7 @@ class TodoForm extends Component {
     return (
         <div>
            <form onSubmit={this.submitItem}>
-                <label htmlFor="item">New Task: </label>
+                <label htmlFor="item"></label>
                 <input 
                 type="text" 
                 name="item" 

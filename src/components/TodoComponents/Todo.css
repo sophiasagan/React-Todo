@@ -8,7 +8,7 @@ body {
 }
 
 body {
-    background-image: radial-gradient(circle, rgb(180, 176, 197), rgb(86, 86, 151), blue);}
+  background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db);}
 
 h1,
 h2,
@@ -29,12 +29,18 @@ span {
     padding: 0 36px;
     max-width: 665px;
     margin: 0 auto;
-  }
-
-  .header {
-    display: flex;
+  
+    /* display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center; */
+    
+      margin: 4rem auto;
+      padding: 2rem 3rem 3rem;
+      max-width: 820px;
+      background: #69b7eb;
+      color: #fff;
+      box-shadow: -20px -20px 0px 0px rgba(100, 100, 100, 0.1);
+    
   }
   h1 {
     /* font-family: 'Roboto', sans-serif; */
@@ -47,15 +53,15 @@ span {
     display: flex;
     flex-direction: column;
     /* flex-flow: row wrap; */
-    justify-content: space-between;
-    width: 100%;
+    justify-content: center;
+    width: 80%;
     margin: 0 auto;
   }
 
   form {
     width: 100%;
     display: flex;
-    /* justify-content: flex-end; */
+    justify-content: center;
   }
 
   label {
@@ -70,30 +76,35 @@ form > input {
     width: 350px;
     outline: 0;
     color: rgb(37, 37, 38);
-    border-bottom: 1px solid #0c98a2;;
+    border-bottom: 1.25px solid #0c98a2;;
     margin-right: 8px;
   }
 
   input::placeholder {
     color: #82bcc1;
-    opacity: 1;
+    opacity: .25;
     padding: 1%;
   }
 
   .todo {
+    display: flex;
     background-color: #0c98a2;;
     color: white;
-    width: 45%;
+    width: 80%;
     text-align: center;
     margin: 4px 0;
     padding-left: 5px;
     cursor: pointer;
-    padding: 5px;
+    padding: 1px;
+    justify-content: center;
+    border-radius: 8px;
   }
   .todo p{
       color: white;
       font-size: 1rem;
-  }
+      margin: 3px auto;
+      /* border-radius: 8px; */
+      }
   
   .todo.completed {
     background-color: #82bcc1;
@@ -103,14 +114,27 @@ form > input {
 
 
 button {
-    background-color: #08555a;
-    border: 1px solid  #0c98a2;;
+    background-color: #2d1a70;
+    border: none;
     color: white;
     font-size: 16px;
-    padding: 6px 14px;
+    text-align: center;
+    padding: 10px 40px;
+    border-radius: 8px;
+
   }
   
   .clear-btn {
     margin-top: 16px;
+    width: 80%;
   }
   
+  .TodoList {
+    margin: 4rem auto;
+    padding: 2rem 3rem 3rem;
+    max-width: 500px;
+    background: #ff6666;
+    color: #fff;
+    box-shadow: -20px -20px 0px 0px rgba(100, 100, 100, 0.1);
+    
+  }
